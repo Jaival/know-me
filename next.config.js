@@ -3,7 +3,9 @@ import('./env.mjs');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {},
+  images: {
+    domains: ['images.unsplash.com'],
+  },
 };
 
 module.exports = nextConfig;
