@@ -1,5 +1,7 @@
-import MainContainer from '@/components/mainContainer'
-import { Button } from '@/components/ui/button'
+'use client'
+import MainContainer from '@/components/mainContainer';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -18,12 +20,16 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button variant={'secondary'}>
-                Get Started
+              <Button variant={'secondary'} asChild>
+                <Link href={'/dashboard'}>
+                  Get Started
+                </Link>
               </Button>
 
-              <Button variant={'outline'}>
-                Learn More
+              <Button variant={'outline'} asChild>
+                <Link href={'/services'}>
+                  Learn More
+                </Link>
               </Button>
             </div>
           </div>
