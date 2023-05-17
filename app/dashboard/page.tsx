@@ -2,10 +2,10 @@
 import MainContainer from '@/components/mainContainer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { z } from 'zod';
-// 
+// import { zodResolver } from '@hookform/resolvers/zod';
+// import { z } from 'zod';
+
 // const schema = z.object({
 //   name: z.string(),
 //   email: z.string(),
@@ -49,7 +49,6 @@ export default function Dashboard() {
                 <Input placeholder='Website' {...register('website')}/>
                 <Input placeholder='Contact Number' {...register('number')}/>
                 <Button variant={'secondary'} type='submit'>Create</Button>
-                {/* <input  type='submit' className={buttonVariants({ variant: 'outline' })} placeholder='Create'/> */}
               </form>
             </div>
             <div className='flex flex-col gap-4'>

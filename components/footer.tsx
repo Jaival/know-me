@@ -14,8 +14,7 @@ export default function Footer() {
           <span>
             <Link
               href={'https://jaivalsaija.vercel.app/'}
-              className="flex flex-row items-center space-x-4 group"
-            >
+              className="flex flex-row items-center space-x-4 group">
               <span className="relative overflow-hidden">
 
                 <div className="absolute h-0.5 w-full bg-red-300 bottom-0 transform -translate-x-24 group-hover:translate-x-0 transition duration-300"></div>
@@ -25,7 +24,6 @@ export default function Footer() {
           </span>
           All Rights Reserved.
         </div>
-        {/* <span className='transition hover:underline'></span> */}
       </div>
     </footer>
   );

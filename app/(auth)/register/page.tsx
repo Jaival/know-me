@@ -2,17 +2,18 @@
 import MainContainer from '@/components/mainContainer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
-import Image from 'next/image';
 import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { z } from 'zod';
+// import { zodResolver } from '@hookform/resolvers/zod';
+// import { z } from 'zod';
 
 type FormValues = {
-  name: string;
+  username: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  number: number;
-  website: string;
+  password: string;
+  passwordConfirmation: string;
 };
 
 export default function Register() {
@@ -22,6 +23,7 @@ export default function Register() {
     formState: { errors },
     reset,
   } = useForm<FormValues>({});
+
   const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
     console.log(JSON.stringify(data));
     reset();
@@ -35,23 +37,24 @@ export default function Register() {
             <h1 className="mt-6 text-2xl font-bold sm:text-3xl md:text-4xl">
               Register
             </h1>
-            <form action="#" className="grid grid-cols-6 gap-6 mt-8">
+            <form
+              className="grid grid-cols-6 gap-6 mt-8"
+              onSubmit={handleSubmit(onSubmit)}>
               <div className="col-span-6">
-                <label htmlFor="Username" className="block text-sm font-medium">
+                <label htmlFor="username" className="block text-sm font-medium">
                   Username
                 </label>
 
-                <Input type="text" id="Username" name="username" />
+                <Input type="text" id="username" {...register('username')} />
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="FirstName"
-                  className="block text-sm font-medium"
-                >
+                  htmlFor="firstName"
+                  className="block text-sm font-medium">
                   First Name
                 </label>
 
-                <Input type="text" id="FirstName" name="first_name" />
+                <Input type="text" id="firstName" {...register('firstName')} />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
@@ -59,38 +62,39 @@ export default function Register() {
                   Last Name
                 </label>
 
-                <Input type="text" id="LastName" name="last_name" />
+                <Input type="text" id="lastName" {...register('lastName')} />
               </div>
 
               <div className="col-span-6">
-                <label htmlFor="Email" className="block text-sm font-medium">
+                <label htmlFor="email" className="block text-sm font-medium">
                   Email
                 </label>
 
-                <Input type="email" id="Email" name="email" />
+                <Input type="email" id="email" {...register('email')} />
               </div>
 
               <div className="col-span-6 sm:col-span-3">
-                <label htmlFor="Password" className="block text-sm font-medium">
+                <label htmlFor="password" className="block text-sm font-medium">
                   Password
                 </label>
 
-                <Input type="password" id="Password" name="password" />
+                <Input
+                  type="password"
+                  id="password"
+                  {...register('password')}/>
               </div>
 
               <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="PasswordConfirmation"
-                  className="block text-sm font-medium"
-                >
+                  htmlFor="passwordConfirmation"
+                  className="block text-sm font-medium">
                   Password Confirmation
                 </label>
 
                 <Input
                   type="password"
-                  id="PasswordConfirmation"
-                  name="password_confirmation"
-                />
+                  id="passwordConfirmation"
+                  {...register('passwordConfirmation')}/>
               </div>
 
               {/* <div className="col-span-6">
@@ -146,22 +150,4 @@ export default function Register() {
       </section>
     </MainContainer>
   );
-}
-
-{
-  /* <div className="col-span-6 sm:col-span-3">
-  <label
-    htmlFor="LastName"
-    className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-  >
-    Last Name
-  </label>
-
-  <Input
-    type="text"
-    id="LastName"
-    name="last_name"
-    className="w-full mt-1 text-sm text-gray-700 bg-white border-gray-200 rounded-md shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-  />
-</div> */
 }

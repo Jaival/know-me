@@ -16,14 +16,13 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className="hidden pl-10 md:flex">
+          <div className="hidden pl-20 md:flex">
             <nav aria-label="Site Nav">
               <ul className="flex items-center gap-6 text-sm">
                 <li>
                   <Link
                     className="text-base transition text-slate-400 hover:text-slate-400/75"
-                    href={'/about'}
-                  >
+                    href={'/about'}>
                     About
                   </Link>
                 </li>
@@ -31,8 +30,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     className="text-base transition text-slate-400 hover:text-slate-400/75"
-                    href={'/services'}
-                  >
+                    href={'/services'}>
                     Services
                   </Link>
                 </li>
@@ -40,8 +38,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     className="text-base transition text-slate-400 hover:text-slate-400/75"
-                    href={'/dashboard'}
-                  >
+                    href={'/dashboard'}>
                     Dashboard
                   </Link>
                 </li>
@@ -66,21 +63,18 @@ export default function Navbar() {
             </div>
 
             <div className="block md:hidden">
-              <Button
-              >
+              <Button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="w-5 h-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth="2"
-                >
+                  strokeWidth="2">
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+                    d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
               </Button>
             </div>

@@ -2,17 +2,14 @@
 import MainContainer from '@/components/mainContainer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
-import Image from 'next/image';
 import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { z } from 'zod';
+// import { zodResolver } from '@hookform/resolvers/zod';
+// import { z } from 'zod';
 
 type FormValues = {
-  name: string;
-  email: string;
-  number: number;
-  website: string;
+  username: string;
+  password: string;
 };
 
 export default function Login() {
@@ -22,6 +19,7 @@ export default function Login() {
     formState: { errors },
     reset,
   } = useForm<FormValues>({});
+  
   const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
     console.log(JSON.stringify(data));
     reset();
@@ -35,13 +33,13 @@ export default function Login() {
             <h1 className="mt-6 text-2xl font-bold sm:text-3xl md:text-4xl">
               Login
             </h1>
-            <form action="#" className="grid grid-cols-6 gap-6 mt-8">
+            <form className="grid grid-cols-6 gap-6 mt-8" onSubmit={handleSubmit(onSubmit)}>
               <div className="col-span-6">
                 <label htmlFor="Username" className="block text-sm font-medium">
                   Username
                 </label>
 
-                <Input type="text" id="Username" name="username" />
+                <Input type="text" id="Username" {...register('username')} />
               </div>
 
               <div className="col-span-6">
@@ -49,7 +47,7 @@ export default function Login() {
                   Password
                 </label>
 
-                <Input type="password" id="Password" name="password" />
+                <Input type="password" id="Password" {...register('password')}/>
               </div>
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
@@ -69,22 +67,4 @@ export default function Login() {
       </section>
     </MainContainer>
   );
-}
-
-{
-  /* <div className="col-span-6 sm:col-span-3">
-  <label
-    htmlFor="LastName"
-    className="block text-sm font-medium text-gray-700 dark:text-gray-200"
-  >
-    Last Name
-  </label>
-
-  <Input
-    type="text"
-    id="LastName"
-    name="last_name"
-    className="w-full mt-1 text-sm text-gray-700 bg-white border-gray-200 rounded-md shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200"
-  />
-</div> */
 }
