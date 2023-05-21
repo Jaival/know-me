@@ -1,33 +1,30 @@
 'use client';
 import MainContainer from '@/components/mainContainer';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import Link from 'next/link';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SignUp } from '@clerk/nextjs';
 // import { zodResolver } from '@hookform/resolvers/zod';
 // import { z } from 'zod';
 
-type FormValues = {
-  username: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  passwordConfirmation: string;
-};
+// type FormValues = {
+//   username: string;
+//   firstName: string;
+//   lastName: string;
+//   email: string;
+//   password: string;
+//   passwordConfirmation: string;
+// };
 
 export default function Register() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<FormValues>({});
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  //   reset,
+  // } = useForm<FormValues>({});
 
-  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
-    console.log(JSON.stringify(data));
-    reset();
-  };
+  // const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
+  //   console.log(JSON.stringify(data));
+  //   reset();
+  // };
 
   return (
     <MainContainer>
@@ -37,7 +34,10 @@ export default function Register() {
             <h1 className="mt-6 text-2xl font-bold sm:text-3xl md:text-4xl">
               Register
             </h1>
-            <form
+            <div className='flex items-center justify-center py-10'>
+              <SignUp redirectUrl="/dashboard"/>
+            </div>
+            {/* <form
               className="grid grid-cols-6 gap-6 mt-8"
               onSubmit={handleSubmit(onSubmit)}>
               <div className="col-span-6">
@@ -97,42 +97,6 @@ export default function Register() {
                   {...register('passwordConfirmation')}/>
               </div>
 
-              {/* <div className="col-span-6">
-                <label htmlFor="MarketingAccept" className="flex gap-4">
-                  <Input
-                    type="checkbox"
-                    id="MarketingAccept"
-                    name="marketing_accept"
-                    className="w-5 h-5 bg-white border-gray-200 rounded-md shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:focus:ring-offset-gray-900"
-                  />
-
-                  <span className="text-sm text-gray-700 dark:text-gray-200">
-                      I want to receive emails about events, product updates and
-                      company announcements.
-                  </span>
-                </label>
-              </div> */}
-
-              {/* <div className="col-span-6">
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                    By creating an account, you agree to our
-                  <a
-                    href="#"
-                    className="text-gray-700 underline dark:text-gray-200"
-                  >
-                      terms and conditions
-                  </a>
-                    and
-                  <a
-                    href="#"
-                    className="text-gray-700 underline dark:text-gray-200"
-                  >
-                      privacy policy{' '}
-                  </a>
-                    .
-                </p>
-              </div> */}
-
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <Button variant={'secondary'}>Create an account</Button>
 
@@ -144,7 +108,7 @@ export default function Register() {
                   .
                 </p>
               </div>
-            </form>
+            </form> */}
           </div>
         </div>
       </section>

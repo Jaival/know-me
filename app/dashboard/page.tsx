@@ -2,16 +2,17 @@
 import MainContainer from '@/components/mainContainer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { useUser } from '@clerk/nextjs';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { z } from 'zod';
 // import { zodResolver } from '@hookform/resolvers/zod';
-// import { z } from 'zod';
 
-// const schema = z.object({
-//   name: z.string(),
-//   email: z.string(),
-//   number: z.number(),
-//   url: z.string().url(),
-// });
+const schema = z.object({
+  name: z.string(),
+  email: z.string(),
+  number: z.number(),
+  url: z.string().url(),
+});
 
 type FormValues = {
   name: string,
@@ -31,6 +32,13 @@ export default function Dashboard() {
     reset();
   };
 
+  // Use the useUser hook to get the Clerk.user object
+  const { isLoaded, isSignedIn, user } = useUser()
+
+  if (!isLoaded || !isSignedIn) {
+    return null
+  }
+
   return (
     <MainContainer>
       <section className="flex text-white">
@@ -39,6 +47,7 @@ export default function Dashboard() {
             <h2 className="text-3xl font-bold">Dashboard</h2>
           </div>
           <div className='flex flex-row justify-between '>
+            <div>{user.firstName}</div>
             <div className='flex flex-col w-1/2 gap-4'>            
               <p className='text-xl font-medium'>
                 Profile

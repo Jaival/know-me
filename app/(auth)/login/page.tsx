@@ -1,29 +1,30 @@
 'use client';
 import MainContainer from '@/components/mainContainer';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import Link from 'next/link';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SignIn } from '@clerk/nextjs';
+// import { Button } from '@/components/ui/button';
+// import { Input } from '@/components/ui/input';
+// import Link from 'next/link';
+// import { SubmitHandler, useForm } from 'react-hook-form';
 // import { zodResolver } from '@hookform/resolvers/zod';
 // import { z } from 'zod';
 
-type FormValues = {
-  username: string;
-  password: string;
-};
+// type FormValues = {
+//   username: string;
+//   password: string;
+// };
 
 export default function Login() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<FormValues>({});
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   formState: { errors },
+  //   reset,
+  // } = useForm<FormValues>({});
   
-  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
-    console.log(JSON.stringify(data));
-    reset();
-  };
+  // const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
+  //   console.log(JSON.stringify(data));
+  //   reset();
+  // };
 
   return (
     <MainContainer>
@@ -33,7 +34,10 @@ export default function Login() {
             <h1 className="mt-6 text-2xl font-bold sm:text-3xl md:text-4xl">
               Login
             </h1>
-            <form className="grid grid-cols-6 gap-6 mt-8" onSubmit={handleSubmit(onSubmit)}>
+            <div className='flex items-center justify-center py-10'>
+              <SignIn redirectUrl="/dashboard"/>
+            </div>
+            {/* <form className="grid grid-cols-6 gap-6 mt-8" onSubmit={handleSubmit(onSubmit)}>
               <div className="col-span-6">
                 <label htmlFor="Username" className="block text-sm font-medium">
                   Username
@@ -61,7 +65,7 @@ export default function Login() {
                   .
                 </p>
               </div>
-            </form>
+            </form> */}
           </div>
         </div>
       </section>

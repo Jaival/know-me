@@ -1,8 +1,13 @@
-import { Inter } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
+import { dark } from '@clerk/themes';
+import { Space_Mono } from 'next/font/google';
 import Head from 'next/head';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const spacemono = Space_Mono({
+  weight: ['400'],
+  preload: false,
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -10,16 +15,21 @@ export const metadata = {
 }
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <Head>
-        <title>Know Me</title>
-      </Head>
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark
+      }}>
+      <html lang="en">
+        <Head>
+          <title>Know Me</title>
+        </Head>
+        <body className={spacemono.className}>{children}</body>
+      </html>
+    </ClerkProvider>
   )
 }

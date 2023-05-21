@@ -1,5 +1,10 @@
 'use client';
  
+import {
+  SignedIn,
+  SignedOut,
+  UserButton
+} from '@clerk/nextjs';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from './ui/button';
@@ -48,19 +53,27 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <Button variant={'secondary'} className='px-5 py-2.5 text-sm font-medium'
-                onClick={() => router.push('/login')}>
+            <SignedIn>
+              {/* Mount the UserButton component */}
+              <UserButton afterSignOutUrl='/' userProfileMode='navigation' showName={true} userProfileUrl='/user-profile'/>
+            </SignedIn>
+            <SignedOut >
+              {/* Signed out users get sign in button */}
+              <div className="sm:flex sm:gap-4">
+                <Button variant={'secondary'} className='px-5 py-2.5 text-sm font-medium'
+                  onClick={() => router.push('/login')}>
                 Login
-              </Button>
-
-              <div className="hidden sm:flex">
-                <Button variant={'outline'} className='text-white px-5 py-2.5 text-sm font-medium' 
-                  onClick={() => router.push('/register')}>
-                  Register
                 </Button>
+
+                <div className="hidden sm:flex">
+                  <Button variant={'outline'} className='text-white px-5 py-2.5 text-sm font-medium' 
+                    onClick={() => router.push('/register')}>
+                  Register
+                  </Button>
+                </div>
               </div>
-            </div>
+            </SignedOut>
+
 
             <div className="block md:hidden">
               <Button>
