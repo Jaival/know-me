@@ -1,11 +1,21 @@
+'use client';
 import MainContainer from '@/components/mainContainer';
 import { UserProfile, useUser } from '@clerk/nextjs';
+import Loading from './loading';
 
 export default function UserProfilePage() {
   const { isLoaded, isSignedIn } = useUser()
 
   if (!isLoaded || !isSignedIn) {
-    return null
+    return (
+      <MainContainer>
+        <section className="text-white">
+          <div className="flex flex-col items-center justify-center w-full h-screen gap-8">
+            <Loading/>
+          </div>
+        </section>
+      </MainContainer>
+    )
   }
   
   return (
