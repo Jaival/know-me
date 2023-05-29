@@ -1,7 +1,6 @@
 import { ClerkProvider } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 import { Hind } from 'next/font/google';
-import Head from 'next/head';
 import './globals.css';
 
 const hind = Hind({
@@ -25,9 +24,9 @@ export default function RootLayout({
         baseTheme: dark
       }}>
       <html lang="en">
-        <Head>
+        <head>
           <title>Know Me</title>
-        </Head>
+        </head>
         <body className={hind.className}>{children}</body>
       </html>
     </ClerkProvider>
