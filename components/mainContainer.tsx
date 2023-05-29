@@ -8,7 +8,7 @@ export default function MainContainer({
 }) {
   return (
     <main>
-      <div className='flex flex-col justify-between h-full p-10 bg-foreground'>
+      <div className='flex flex-col justify-between min-h-screen p-10 bg-foreground'>
         <Navbar />
         <div>{children}</div>
         <Footer />
