@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { authMiddleware } from '@clerk/nextjs';
 
 export default authMiddleware({
@@ -9,9 +10,9 @@ export default authMiddleware({
   //     return NextResponse.redirect(signInUrl)
   //   }
   // },
-  publicRoutes: ['/','/login','/about','/services','/register','/user','/user/:id'],
+  publicRoutes: ['/','/login','/about','/services','/register','/user','/user/:id',],
 });
 
 export const config = {
-  matcher: ['/((?!.*\\..*|_next).*)','/','/(api|trpc)(.*)'],
+  matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
 };

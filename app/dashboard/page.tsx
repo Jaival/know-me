@@ -14,6 +14,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { useUser } from '@clerk/nextjs';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Prisma } from '@prisma/client';
 import { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -38,11 +39,6 @@ export default function Dashboard() {
       aboutMe:''
     },
   });
-
-  function onSubmit(values: z.infer<typeof schema>) {
-    console.log(values);
-  }
-
   const { isLoaded, isSignedIn, user } = useUser();
 
   if (!isLoaded || !isSignedIn) {
@@ -56,6 +52,41 @@ export default function Dashboard() {
       </MainContainer>
     );
   }
+  
+  let clerkId : string;
+
+  if(isSignedIn){
+    clerkId = user.id;
+  }
+
+  async function onSubmit(values: z.infer<typeof schema>) {
+    let user: Prisma.UserCreateInput
+    user = {
+      name:values.name,
+      email:values.email,
+      contact:values.number,
+      aboutMe:values.aboutMe,
+      url: values.url,
+      clerk_id: clerkId
+    }
+    console.log('USER stringify:',JSON.stringify({
+      user
+    }));
+    try {
+      // const body = {user}
+      await fetch('/api/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({user}),
+      });
+      // console.log(res)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
   return (
     <Suspense fallback={<Loading />}>
       <MainContainer>
