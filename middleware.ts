@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-import { authMiddleware } from '@clerk/nextjs';
+import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
   // handle users who aren't authenticated
@@ -10,7 +10,16 @@ export default authMiddleware({
   //     return NextResponse.redirect(signInUrl)
   //   }
   // },
-  publicRoutes: ['/','/login','/about','/services','/register','/user','/user/:id',],
+  publicRoutes: [
+    "/",
+    "/login",
+    "/about",
+    "/services",
+    "/register",
+    "/myprofile",
+    "/myprofile/:id",
+    "/search",
+  ],
 });
 
 export const config = {

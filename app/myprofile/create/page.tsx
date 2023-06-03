@@ -1,5 +1,6 @@
 'use client';
 import { Card_Type_1 } from '@/components/cards/cardsUI';
+import Loading from '@/components/loading';
 import MainContainer from '@/components/mainContainer';
 import { Button } from '@/components/ui/button';
 import {
@@ -18,7 +19,6 @@ import { Prisma } from '@prisma/client';
 import { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import Loading from './loading';
 
 const schema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -28,7 +28,7 @@ const schema = z.object({
   aboutMe: z.string().min(5,{ message: 'Name must be at least 5 characters.' })
 });
 
-export default function Dashboard() {
+export default function ProfileCreate() {
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     mode:'onChange',
@@ -69,11 +69,7 @@ export default function Dashboard() {
       url: values.url,
       clerk_id: clerkId
     }
-    console.log('USER stringify:',JSON.stringify({
-      user
-    }));
     try {
-      // const body = {user}
       await fetch('/api/user', {
         method: 'POST',
         headers: {
@@ -81,7 +77,6 @@ export default function Dashboard() {
         },
         body: JSON.stringify({user}),
       });
-      // console.log(res)
     } catch (error) {
       console.log(error)
     }
@@ -93,10 +88,9 @@ export default function Dashboard() {
         <section className="flex text-white">
           <div className="flex flex-col w-full gap-8 px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-32">
             <div className="max-w-xl">
-              <h2 className="text-3xl font-bold">Dashboard</h2>
+              <h2 className="text-3xl font-bold">Create Profile</h2>
             </div>
             <div className="flex flex-row justify-between gap-10">
-              <div>{user.firstName}</div>
               <div className="flex flex-col w-1/2 gap-4">
                 <p className="text-xl font-medium">Profile</p>
                 <UserDataForm form={form} onSubmit={onSubmit}/>
