@@ -12,7 +12,7 @@ export default function Login() {
               Login
             </h1>
             <div className='flex items-center justify-center py-10'>
-              <SignIn redirectUrl="/dashboard"/>
+              <SignIn redirectUrl="/myprofile"/>
             </div>
           </div>
         </div>

@@ -1,11 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export function Card_Type_1() {
+export function Card_Type_1({
+  name = 'Not Provided',
+  occupation = 'Not Provided',
+  email = 'Not Provided',
+  number = 'Not Provided',
+  aboutMe = 'Not Provided',
+  url = 'Not Provided',
+}: {
+  name?: String;
+  occupation?: String;
+  email?: String;
+  number?: String;
+  aboutMe?: String;
+  url?: String;
+}) {
   return (
-    <article
-      className="flex transition bg-white rounded-lg hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800/25"
-    >
+    <article className="flex transition bg-white rounded-lg hover:shadow-xl dark:bg-gray-900 dark:shadow-gray-800/25">
       {/*<div className="rotate-180 p-2 [writing-mode:_vertical-lr]">*/}
       {/*  <time*/}
       {/*     dateTime="2022-10-10"*/}
@@ -28,40 +40,38 @@ export function Card_Type_1() {
       </div>
 
       <div className="flex flex-col justify-between flex-1">
-        <div
-          className="border-s border-gray-900/10 p-4 dark:border-white/10 sm:!border-l-transparent sm:p-6"
-        >
-          <div className='flex'>
+        <div className="border-s border-gray-900/10 p-4 dark:border-white/10 sm:!border-l-transparent sm:p-6">
+          <div className="flex">
             <h3 className="font-bold text-gray-900 uppercase dark:text-white">
-               Name &nbsp;
+              {name} &nbsp;
             </h3>
             <h3 className="font-bold text-gray-900 uppercase dark:text-white">
-               Occupation
+              {occupation}
             </h3>
           </div>
 
-          <div className='flex'>
+          <div className="flex">
             <p className="text-gray-900 lowercase font-extralight dark:text-white">
-               Email &nbsp;
+              {email} &nbsp;
             </p>
             <p className="text-gray-900 lowercase font-extralight dark:text-white">
-               Number
+              {number}
             </p>
           </div>
 
-          <p
-            className="mt-2 text-gray-700 line-clamp-3 text-sm/relaxed dark:text-gray-200">
-             About Me
+          <p className="mt-2 text-gray-700 line-clamp-3 text-sm/relaxed dark:text-gray-200">
+            {aboutMe}
           </p>
         </div>
       </div>
       <div className="sm:flex sm:items-end sm:justify-end">
-        <a
-          href="#"
-          className="block px-5 py-3 text-xs font-medium text-center text-gray-900 uppercase transition bg-yellow-300 rounded-br-lg hover:bg-yellow-400">
-           My Website
-        </a>
+        <Link
+          href={url ? url.toString() : '#'}
+          className="block px-5 py-3 text-xs font-medium text-center text-gray-900 uppercase transition bg-yellow-300 rounded-br-lg hover:bg-yellow-400"
+        >
+          My Website
+        </Link>
       </div>
     </article>
-  )
+  );
 }

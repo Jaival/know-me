@@ -1,3 +1,4 @@
+import { Toaster } from '@/components/ui/toaster';
 import { ClerkProvider } from '@clerk/nextjs';
 import { dark } from '@clerk/themes';
 import { Hind } from 'next/font/google';
@@ -27,7 +28,10 @@ export default function RootLayout({
         <head>
           <title>Know Me</title>
         </head>
-        <body className={hind.className}>{children}</body>
+        <body className={hind.className}>
+          {children}
+          <Toaster />
+        </body>
       </html>
     </ClerkProvider>
   )

@@ -13,7 +13,7 @@ export default function Register() {
               Register
             </h1>
             <div className='flex items-center justify-center py-10'>
-              <SignUp redirectUrl="/dashboard"/>
+              <SignUp redirectUrl="/myprofile"/>
             </div>
           </div>
         </div>

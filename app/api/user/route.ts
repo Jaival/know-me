@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest) {
   if (req.method === 'GET') {
-    // res.status(200).json({ message: 'GET Method Called' });
     return NextResponse.json({ message: 'GET Method Called' }, { status: 200 });
   } else {
     // 404
@@ -13,7 +12,7 @@ export async function GET(req: NextRequest) {
 
 export async function POST(req: NextRequest) {
   const { user } = await req.json();
-  console.log('body', user);
+  // console.log('body', user);
   await prisma.user.create({
     data: user,
   });

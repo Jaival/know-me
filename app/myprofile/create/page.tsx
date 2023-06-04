@@ -15,7 +15,6 @@ import {
 import { Input } from '@/components/ui/input';
 import { useUser } from '@clerk/nextjs';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Prisma } from '@prisma/client';
 import { Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -23,7 +22,7 @@ import { z } from 'zod';
 const schema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Email must be valid.' }).optional(),
-  number: z.coerce.number().safe({ message: 'Please enter a valid contact number' }).optional(),
+  number: z.string().min(10, { message: 'Please enter a valid contact number' }).optional(),
   url: z.string().url({ message: 'Please enter a valid url' }).optional(),
   aboutMe: z.string().min(5,{ message: 'Name must be at least 5 characters.' })
 });
@@ -39,6 +38,7 @@ export default function ProfileCreate() {
       aboutMe:''
     },
   });
+  
   const { isLoaded, isSignedIn, user } = useUser();
 
   if (!isLoaded || !isSignedIn) {
@@ -60,22 +60,42 @@ export default function ProfileCreate() {
   }
 
   async function onSubmit(values: z.infer<typeof schema>) {
-    let user: Prisma.UserCreateInput
-    user = {
+    let userData;
+    let user_id;
+    try {
+      const res = await fetch('/api/user/id', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({clerkId}),
+      });
+      userData = await res.json();
+      user_id = userData.data.id
+      console.log(user_id)
+    } catch (error) {
+      console.log(error)
+    }
+    
+    const profile = {
       name:values.name,
       email:values.email,
       contact:values.number,
       aboutMe:values.aboutMe,
       url: values.url,
-      clerk_id: clerkId
+      // user_id: user_id,
+      profile:{
+        connect:{id:user_id}
+      },
     }
+    
     try {
-      await fetch('/api/user', {
+      await fetch('/api/profile/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({user}),
+        body: JSON.stringify({profile}),
       });
     } catch (error) {
       console.log(error)
