@@ -36,7 +36,10 @@ next-env.d.ts
 
 # Jetbrains
 .idea
-prisma/migrations
+.fleet
 
 # excalidraw
 *.excalidraw
+
+# Prisma
+prisma/migrations
