@@ -22,17 +22,16 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 An online digital profile creator.
 
 ## Next Steps
-+ Create an auth provider to pass session in between pages.
-+ Properly create API's for data fetching.
-+ Add proper loading state if necessary
-+ Refactor the project to use props better (Currently used none).
-
+- [ ] Create an auth provider to pass session in between pages.
+- [ ] Refactor the project to use props better (Currently used none).
+- [ ] Properly create API's for data fetching.
+- [ ] Add proper loading state if necessary
 ## Products used
 
-Database: Planetscale or Supabase
-Auth: Clerk or Supabase
-Prisma
-shancn/ui
++ Database: Planetscale or Supabase
++ Auth: Clerk or Supabase
++ Prisma
++ shancn/ui
 
 ## Project Structure
 
