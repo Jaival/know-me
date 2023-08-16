@@ -4,14 +4,14 @@ import Link from 'next/link';
 export default function Services() {
   return (
     <MainContainer>
-      <section className="flex items-center justify-center text-white">
+      <section className="flex items-center justify-center ">
         <div className="max-w-screen-xl px-4 py-8 mx-auto sm:py-12 sm:px-6 lg:py-16 lg:px-8">
           <div className="max-w-lg mx-auto text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">
               Kickstart your marketing
             </h2>
 
-            <p className="mt-4 text-gray-300">
+            <p className="mt-4 ">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Consequuntur aliquam doloribus nesciunt eos fugiat. Vitae aperiam
               fugit consequuntur saepe laborum.
@@ -40,11 +40,9 @@ export default function Services() {
                 />
               </svg>
 
-              <h2 className="mt-4 text-xl font-bold text-white">
-                Digital campaigns
-              </h2>
+              <h2 className="mt-4 text-xl font-bold ">Digital campaigns</h2>
 
-              <p className="mt-1 text-sm text-gray-300">
+              <p className="mt-1 text-sm ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
                 quo possimus adipisci distinctio alias voluptatum blanditiis
                 laudantium.
@@ -72,11 +70,9 @@ export default function Services() {
                 />
               </svg>
 
-              <h2 className="mt-4 text-xl font-bold text-white">
-                Digital campaigns
-              </h2>
+              <h2 className="mt-4 text-xl font-bold ">Digital campaigns</h2>
 
-              <p className="mt-1 text-sm text-gray-300">
+              <p className="mt-1 text-sm ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
                 quo possimus adipisci distinctio alias voluptatum blanditiis
                 laudantium.
@@ -104,11 +100,9 @@ export default function Services() {
                 />
               </svg>
 
-              <h2 className="mt-4 text-xl font-bold text-white">
-                Digital campaigns
-              </h2>
+              <h2 className="mt-4 text-xl font-bold ">Digital campaigns</h2>
 
-              <p className="mt-1 text-sm text-gray-300">
+              <p className="mt-1 text-sm ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
                 quo possimus adipisci distinctio alias voluptatum blanditiis
                 laudantium.
@@ -136,11 +130,9 @@ export default function Services() {
                 />
               </svg>
 
-              <h2 className="mt-4 text-xl font-bold text-white">
-                Digital campaigns
-              </h2>
+              <h2 className="mt-4 text-xl font-bold ">Digital campaigns</h2>
 
-              <p className="mt-1 text-sm text-gray-300">
+              <p className="mt-1 text-sm ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
                 quo possimus adipisci distinctio alias voluptatum blanditiis
                 laudantium.
@@ -168,11 +160,9 @@ export default function Services() {
                 />
               </svg>
 
-              <h2 className="mt-4 text-xl font-bold text-white">
-                Digital campaigns
-              </h2>
+              <h2 className="mt-4 text-xl font-bold ">Digital campaigns</h2>
 
-              <p className="mt-1 text-sm text-gray-300">
+              <p className="mt-1 text-sm ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
                 quo possimus adipisci distinctio alias voluptatum blanditiis
                 laudantium.
@@ -200,11 +190,9 @@ export default function Services() {
                 />
               </svg>
 
-              <h2 className="mt-4 text-xl font-bold text-white">
-                Digital campaigns
-              </h2>
+              <h2 className="mt-4 text-xl font-bold ">Digital campaigns</h2>
 
-              <p className="mt-1 text-sm text-gray-300">
+              <p className="mt-1 text-sm ">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
                 quo possimus adipisci distinctio alias voluptatum blanditiis
                 laudantium.

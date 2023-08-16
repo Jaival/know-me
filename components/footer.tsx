@@ -4,7 +4,7 @@ import { Separator } from './ui/separator';
 export default function Footer() {
   return (
     <footer aria-label="Site Footer">
-      <div className="flex flex-col max-w-screen-xl px-4 py-8 mx-auto text-white">
+      <div className="flex flex-col max-w-screen-xl px-4 py-8 mx-auto">
         <Separator className="my-4 bg-violet-400" />
         <div className="flex">
           <span>© {new Date().getFullYear() + '.'}</span>

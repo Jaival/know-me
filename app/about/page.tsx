@@ -3,14 +3,14 @@ import MainContainer from '@/components/mainContainer';
 export default function About() {
   return (
     <MainContainer>
-      <section className="flex items-center justify-center text-white">
+      <section className="flex items-center justify-center">
         <div className="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-20">
           <div className="max-w-xl">
             <h2 className="text-3xl font-bold sm:text-4xl">
               What makes us special
             </h2>
 
-            <p className="mt-4 text-gray-300">
+            <p className="mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
               dolores iure fugit totam iste obcaecati. Consequatur ipsa quod
               ipsum sequi culpa delectus, cumque id tenetur quibusdam, quos fuga
@@ -42,7 +42,7 @@ export default function About() {
               <div>
                 <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
 
-                <p className="mt-1 text-sm text-gray-300">
+                <p className="mt-1 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                   cumque tempore est ab possimus quisquam reiciendis tempora
                   animi! Quaerat, saepe?
@@ -73,7 +73,7 @@ export default function About() {
               <div>
                 <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
 
-                <p className="mt-1 text-sm text-gray-300">
+                <p className="mt-1 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                   cumque tempore est ab possimus quisquam reiciendis tempora
                   animi! Quaerat, saepe?
@@ -104,7 +104,7 @@ export default function About() {
               <div>
                 <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
 
-                <p className="mt-1 text-sm text-gray-300">
+                <p className="mt-1 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                   cumque tempore est ab possimus quisquam reiciendis tempora
                   animi! Quaerat, saepe?
@@ -135,7 +135,7 @@ export default function About() {
               <div>
                 <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
 
-                <p className="mt-1 text-sm text-gray-300">
+                <p className="mt-1 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                   cumque tempore est ab possimus quisquam reiciendis tempora
                   animi! Quaerat, saepe?
@@ -166,7 +166,7 @@ export default function About() {
               <div>
                 <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
 
-                <p className="mt-1 text-sm text-gray-300">
+                <p className="mt-1 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                   cumque tempore est ab possimus quisquam reiciendis tempora
                   animi! Quaerat, saepe?
@@ -197,7 +197,7 @@ export default function About() {
               <div>
                 <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
 
-                <p className="mt-1 text-sm text-gray-300">
+                <p className="mt-1 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
                   cumque tempore est ab possimus quisquam reiciendis tempora
                   animi! Quaerat, saepe?

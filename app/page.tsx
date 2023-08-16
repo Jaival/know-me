@@ -12,7 +12,7 @@ export default function Home() {
               Unleash Your Digital Persona.
             </h1>
 
-            <p className="max-w-xl mx-auto mt-4 sm:text-xl/relaxed text-white">
+            <p className="max-w-xl mx-auto mt-4 sm:text-xl/relaxed">
               Create & Share Digital Business Cards Anywhere, Anytime.
             </p>
 
