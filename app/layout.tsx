@@ -16,10 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // <Providers>
     <html lang="en">
-      <body className={rubik.className}>{children}</body>
+      <Providers attribute="class" defaultTheme="dark" enableSystem>
+        <body className={rubik.className}>{children}</body>
+      </Providers>
     </html>
-    // </Providers>
   );
 }

@@ -1,4 +1,5 @@
 import NavigationButton from '@/components/custom/navigationButton';
+import { ToggleTheme } from '@/components/custom/toggleTheme';
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -23,11 +24,9 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div>
-          <NavigationButton
-            title="Sign In/Sign Up"
-            navigateTo="/login"
-          ></NavigationButton>
+        <div className="flex gap-4">
+          <NavigationButton title="Sign In/Sign Up" navigateTo="/login" />
+          <ToggleTheme />
         </div>
       </div>
     </div>
